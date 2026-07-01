@@ -1,0 +1,172 @@
+{#-
+  PROTOTYPE — SE question 1a rendered three ways for comparison.
+  Not part of the DSW pipeline; a scratch template for design review only.
+  Render: tools/render.py --input input/Example-DMP.json --template "$PWD/prototypes/proto-1a.html.j2" -o out/proto-1a.html
+-#}
+{%- set dc = ctx|to_context_obj -%}
+{%- set replies = dc|extract_replies -%}
+{%- set reusing = replies.reusingCollectingChapter -%}
+
+{%- macro sval(r) -%}
+  {%- if r is mapping -%}
+    {%- if r._label is defined and r._label -%}{{ r._label }}
+    {%- elif r._value is defined and r._value -%}{{ r._value }}
+    {%- endif -%}
+  {%- endif -%}
+{%- endmacro -%}
+
+{#- plain display string for a reply mapping or string -#}
+{%- macro v(r) -%}
+{{- (sval(r)|trim) if r is mapping else (r|string|trim if r is not none else "") -}}
+{%- endmacro -%}
+
+{#- Oxford-comma join of a list of strings -#}
+{%- macro oxford(items) -%}
+  {%- set xs = items | select | list -%}
+  {%- if xs|length == 1 -%}{{ xs[0] }}
+  {%- elif xs|length == 2 -%}{{ xs[0] }} and {{ xs[1] }}
+  {%- elif xs|length > 2 -%}{{ xs[:-1]|join(', ') }}, and {{ xs[-1] }}
+  {%- endif -%}
+{%- endmacro -%}
+
+{#- ---- pull the 1a-relevant KM values into variables (namespace so loop
+     accumulation persists) ---- -#}
+{%- set reDs = reusing.reDatasetsRecords -%}
+{%- set reuseLabel = v(reDs) -%}
+{%- set discarded = v(reDs.brieflyDescribeDiscarded) if reDs else "" -%}
+{%- set nonMeasuredLabel = v(reusing.hasNonMeasuredData) -%}
+{%- set measuredLabel = v(reusing.hasMeasuredData) -%}
+{%- set provenance = v(reusing.hasMeasuredData.howProvenance) if reusing.hasMeasuredData else "" -%}
+{%- set gatherPlain = (v(reusing.gather) | replace('\n- ', '; ') | replace('\n', ' ') | replace(': ;', ':') | trim) -%}
+{%- set nsx = namespace(reused=[], nm=[]) -%}
+{%- for d in (reDs.listPublishedArchived if (reDs and reDs.listPublishedArchived) else []) -%}
+  {%- set title = v(d.titlePublishedDataset) or v(d.dataset) or "an unnamed dataset" -%}
+  {%- set nsx.reused = nsx.reused + [ {"title": title, "cond": v(d.recordSourceHave)} ] -%}
+{%- endfor -%}
+{%- for n in (reusing.hasNonMeasuredData.datasets if (reusing.hasNonMeasuredData and reusing.hasNonMeasuredData.datasets) else []) -%}
+  {%- set nsx.nm = nsx.nm + [ {"method": v(n.collectionMethodology), "capture": v(n.howCaptured), "name": v(n.dataset_1)} ] -%}
+{%- endfor -%}
+{%- set reused = nsx.reused -%}
+{%- set nm = nsx.nm -%}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<style>
+  body { font-family: Calibri, Arial, sans-serif; max-width: 52em; margin: 2em auto; line-height: 1.45; }
+  h1 { font-size: 1.3em; } h2 { font-size: 1.05em; margin-top: 1.6em; }
+  .q { background:#eef3fb; border:1px solid #cdd9ee; padding:8px 12px; }
+  ul.guidance { color:#4AA55B; font-style:italic; }
+  .style { border:1px solid #bbb; border-left:4px solid #4a75c2; padding:10px 14px; margin:0.8em 0; }
+  .style h2 { margin-top:0; color:#2b4a86; }
+  dl dt { font-weight:bold; margin-top:6px; } dd { margin:0 0 0 1.2em; }
+  .gap { color:#B00020; }
+  .raw { background:#f6f6f6; border:1px solid #ddd; padding:8px 12px; font-size:0.9em; }
+</style>
+</head>
+<body>
+
+<h1>Prototype — SE 1a rendered three ways</h1>
+<div class="q"><strong>1a. How will new data be collected or produced and/or how will existing data be re-used?</strong>
+<ul class="guidance">
+<li>Explain which methodologies or software will be used if new data are collected or produced.</li>
+<li>State any constraints on re-use of existing data if there are any.</li>
+<li>Explain how data provenance will be documented.</li>
+<li>Briefly state the reasons if the re-use of any existing data sources has been considered but discarded.</li>
+</ul></div>
+
+<div class="raw">
+<strong>KM values available for 1a in this export:</strong>
+<ul>
+<li>reDatasetsRecords = <em>{{ reuseLabel or "(unanswered)" }}</em></li>
+<li>re-used datasets = <em>{% if reused %}{% for r in reused %}{{ r.title }} (conditions: {{ r.cond or "—" }}){% if not loop.last %}; {% endif %}{% endfor %}{% else %}(none){% endif %}</em></li>
+<li>brieflyDescribeDiscarded = <em>{{ discarded or "(unanswered)" }}</em></li>
+<li>hasNonMeasuredData = <em>{{ nonMeasuredLabel or "(unanswered)" }}</em>; datasets = <em>{% if nm %}{% for n in nm %}name: {{ n.name or "—" }} / method: {{ n.method or "—" }} / capture: {{ n.capture or "—" }}{% if not loop.last %}; {% endif %}{% endfor %}{% else %}(none){% endif %}</em></li>
+<li>hasMeasuredData = <em>{{ measuredLabel or "(unanswered)" }}</em>; howProvenance = <em>{{ provenance or "(unanswered)" }}</em></li>
+<li>gather = <em>{{ gatherPlain or "(unanswered)" }}</em></li>
+</ul>
+</div>
+
+{#- ============================ STYLE A ============================ -#}
+<div class="style">
+<h2>Style A — Cleaned labels (current approach, debug keys removed)</h2>
+<dl>
+<dt>Re-use of existing data</dt><dd>{{ reuseLabel or "(not answered)" }}</dd>
+{%- for r in reused %}
+<dt>Dataset to re-use</dt><dd>{{ r.title }}{% if r.cond %} — re-use conditions: {{ r.cond }}{% endif %}</dd>
+{%- endfor %}
+<dt>Collection of new data (observation/questionnaire/interview)</dt><dd>{{ nonMeasuredLabel or "(not answered)" }}</dd>
+{%- for n in nm %}
+<dt>Collection methodology</dt><dd>{{ n.method or "(not answered)" }}</dd>
+<dt>Capture</dt><dd>{{ n.capture or "(not answered)" }}</dd>
+{%- endfor %}
+<dt>Data captured with measurement equipment</dt><dd>{{ measuredLabel or "(not answered)" }}</dd>
+<dt>Provenance documentation</dt><dd>{{ provenance or "(not answered)" }}</dd>
+<dt>Other data gathered</dt><dd>{{ gatherPlain or "(not answered)" }}</dd>
+<dt>Reasons re-use discarded</dt><dd>{{ discarded or "(not answered)" }}</dd>
+</dl>
+</div>
+
+{#- ============================ STYLE B ============================ -#}
+{#- Narrative-first: lean on the free-text fields, minimal glue, silently
+    omit empty fields (reads cleanest, but hides SE gaps). -#}
+<div class="style">
+<h2>Style B — Narrative-first (surface free-text, omit empties)</h2>
+{%- if reuseLabel|lower == "yes" and reused %}
+<p>Existing data will be re-used. The project plans to re-use {{ oxford(reused|map(attribute='title')|list) }}{% set conds = reused|map(attribute='cond')|select|list %}{% if conds %} ({{ conds|join('; ') }}){% endif %}.</p>
+{%- endif %}
+{%- for n in nm %}
+<p>{% if n.name %}For {{ n.name }}, new{% else %}New{% endif %} data will be collected: {{ n.method }}.{% if n.capture %} {{ n.capture }}.{% endif %}</p>
+{%- endfor %}
+{%- if gatherPlain %}
+<p>The project will additionally gather: {{ gatherPlain }}.</p>
+{%- endif %}
+{%- if provenance %}
+<p>Provenance: {{ provenance }}.</p>
+{%- endif %}
+{%- if discarded %}
+<p>Some existing sources were considered but discarded: {{ discarded }}.</p>
+{%- endif %}
+</div>
+
+{#- ============================ STYLE C ============================ -#}
+{#- Sentence stitching: grammatical composition, addresses every SE guidance
+    point explicitly, flags missing ones in prose. -#}
+{%- set ns = namespace(s=[]) -%}
+{%- if reuseLabel|lower == "yes" -%}
+  {%- if reused -%}
+    {%- set ns.s = ns.s + ["The project will re-use existing data, specifically " ~ oxford(reused|map(attribute='title')|list) ~ "."] -%}
+    {%- set conds = reused|map(attribute='cond')|select|list -%}
+    {%- if conds -%}{%- set ns.s = ns.s + ["Planned re-use is covered by the stated conditions (" ~ (conds|join('; ')) ~ ")."] -%}{%- endif -%}
+  {%- else -%}
+    {%- set ns.s = ns.s + ["The project will re-use existing data."] -%}
+  {%- endif -%}
+{%- elif reuseLabel|lower == "no" -%}
+  {%- set ns.s = ns.s + ["The project will not re-use existing data."] -%}
+{%- endif -%}
+{%- if discarded -%}{%- set ns.s = ns.s + ["Existing sources were considered but discarded: " ~ discarded ~ "."] -%}{%- endif -%}
+{%- if nm -%}
+  {%- for n in nm -%}
+    {%- set sent = "New data will be collected" ~ (" for " ~ n.name if n.name else "") ~ (" using the following methodology: " ~ n.method if n.method else "") ~ "." -%}
+    {%- set ns.s = ns.s + [sent] -%}
+    {%- if n.capture -%}{%- set ns.s = ns.s + ["The data are captured " ~ (n.capture|lower) ~ "."] -%}{%- endif -%}
+  {%- endfor -%}
+{%- elif measuredLabel|lower == "yes" -%}
+  {%- set ns.s = ns.s + ["New data will be produced using measurement equipment."] -%}
+{%- endif -%}
+{%- if provenance -%}
+  {%- set ns.s = ns.s + ["Data provenance will be documented as follows: " ~ provenance ~ "."] -%}
+{%- else -%}
+  {%- set ns.s = ns.s + ["<span class='gap'>Data provenance documentation is not described in the questionnaire and should be added.</span>"] -%}
+{%- endif -%}
+<div class="style">
+<h2>Style C — Sentence stitching (grammatical, covers every guidance point)</h2>
+<p>{{ ns.s | join(' ') }}</p>
+{%- if gatherPlain %}
+<p>In addition, the project will gather other materials: {{ gatherPlain }}.</p>
+{%- endif %}
+</div>
+
+</body>
+</html>

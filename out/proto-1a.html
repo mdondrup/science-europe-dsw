@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<style>
+  body { font-family: Calibri, Arial, sans-serif; max-width: 52em; margin: 2em auto; line-height: 1.45; }
+  h1 { font-size: 1.3em; } h2 { font-size: 1.05em; margin-top: 1.6em; }
+  .q { background:#eef3fb; border:1px solid #cdd9ee; padding:8px 12px; }
+  ul.guidance { color:#4AA55B; font-style:italic; }
+  .style { border:1px solid #bbb; border-left:4px solid #4a75c2; padding:10px 14px; margin:0.8em 0; }
+  .style h2 { margin-top:0; color:#2b4a86; }
+  dl dt { font-weight:bold; margin-top:6px; } dd { margin:0 0 0 1.2em; }
+  .gap { color:#B00020; }
+  .raw { background:#f6f6f6; border:1px solid #ddd; padding:8px 12px; font-size:0.9em; }
+</style>
+</head>
+<body>
+
+<h1>Prototype — SE 1a rendered three ways</h1>
+<div class="q"><strong>1a. How will new data be collected or produced and/or how will existing data be re-used?</strong>
+<ul class="guidance">
+<li>Explain which methodologies or software will be used if new data are collected or produced.</li>
+<li>State any constraints on re-use of existing data if there are any.</li>
+<li>Explain how data provenance will be documented.</li>
+<li>Briefly state the reasons if the re-use of any existing data sources has been considered but discarded.</li>
+</ul></div>
+
+<div class="raw">
+<strong>KM values available for 1a in this export:</strong>
+<ul>
+<li>reDatasetsRecords = <em>Yes</em></li>
+<li>re-used datasets = <em>A GREAT DATASET (conditions: Yes, all planned use is permitted)</em></li>
+<li>brieflyDescribeDiscarded = <em>(unanswered)</em></li>
+<li>hasNonMeasuredData = <em>Yes</em>; datasets = <em>name: climate data / method: We simply measure it with Satelites / capture: All immediately in digital form</em></li>
+<li>hasMeasuredData = <em>(unanswered)</em>; howProvenance = <em>(unanswered)</em></li>
+<li>gather = <em>A lot of other data:  ; Documents related to manuscript writing (e.g. manuscript drafts written in Word or LaTex, figures and illustrations in graphic software); Literature databases; Notetaking documents</em></li>
+</ul>
+</div><div class="style">
+<h2>Style A — Cleaned labels (current approach, debug keys removed)</h2>
+<dl>
+<dt>Re-use of existing data</dt><dd>Yes</dd>
+<dt>Dataset to re-use</dt><dd>A GREAT DATASET — re-use conditions: Yes, all planned use is permitted</dd>
+<dt>Collection of new data (observation/questionnaire/interview)</dt><dd>Yes</dd>
+<dt>Collection methodology</dt><dd>We simply measure it with Satelites</dd>
+<dt>Capture</dt><dd>All immediately in digital form</dd>
+<dt>Data captured with measurement equipment</dt><dd>(not answered)</dd>
+<dt>Provenance documentation</dt><dd>(not answered)</dd>
+<dt>Other data gathered</dt><dd>A lot of other data:  ; Documents related to manuscript writing (e.g. manuscript drafts written in Word or LaTex, figures and illustrations in graphic software); Literature databases; Notetaking documents</dd>
+<dt>Reasons re-use discarded</dt><dd>(not answered)</dd>
+</dl>
+</div><div class="style">
+<h2>Style B — Narrative-first (surface free-text, omit empties)</h2>
+<p>Existing data will be re-used. The project plans to re-use A GREAT DATASET (Yes, all planned use is permitted).</p>
+<p>For climate data, new data will be collected: We simply measure it with Satelites. All immediately in digital form.</p>
+<p>The project will additionally gather: A lot of other data:  ; Documents related to manuscript writing (e.g. manuscript drafts written in Word or LaTex, figures and illustrations in graphic software); Literature databases; Notetaking documents.</p>
+</div><div class="style">
+<h2>Style C — Sentence stitching (grammatical, covers every guidance point)</h2>
+<p>The project will re-use existing data, specifically A GREAT DATASET. Planned re-use is covered by the stated conditions (Yes, all planned use is permitted). New data will be collected for climate data using the following methodology: We simply measure it with Satelites. The data are captured all immediately in digital form. <span class='gap'>Data provenance documentation is not described in the questionnaire and should be added.</span></p>
+<p>In addition, the project will gather other materials: A lot of other data:  ; Documents related to manuscript writing (e.g. manuscript drafts written in Word or LaTex, figures and illustrations in graphic software); Literature databases; Notetaking documents.</p>
+</div>
+
+</body>
+</html>

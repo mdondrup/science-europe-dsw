@@ -1,0 +1,102 @@
+{
+  "organizationId": "research.data.no",
+  "templateId": "rda-science-europe-generic",
+  "version": "1.29.1",
+  "name": "HTML (Science Europe)",
+  "description": "Science Europe Generic DMP template, based on the RDA DMP Common Standard",
+  "license": "Apache-2.0",
+  "metamodelVersion": "18.0",
+  "allowedPackages": [
+    {
+      "orgId": "research.data.no",
+      "kmId": "norway-generic",
+      "minVersion": "1.2.0",
+      "maxVersion": null
+    }
+  ],
+  "formats": [
+    {
+      "uuid": "2031f1f2-42a1-425f-aefa-593022e42141",
+      "name": "HTML (Science Europe) — structured",
+      "icon": "fas fa-file-code",
+      "steps": [
+        {
+          "name": "jinja",
+          "options": {
+            "template": "src/science-europe-dmp.html.j2",
+            "content-type": "text/html",
+            "extension": "html"
+          }
+        }
+      ]
+    },
+    {
+      "uuid": "2031f1f2-62a1-425f-aefa-593022e421f8",
+      "name": "HTML (Science Europe) — narrative",
+      "icon": "fas fa-file-code",
+      "steps": [
+        {
+          "name": "jinja",
+          "options": {
+            "template": "src/science-europe-dmp-narrative.html.j2",
+            "content-type": "text/html",
+            "extension": "html"
+          }
+        }
+      ]
+    },
+    {
+      "uuid": "ee0d8fd4-f3f4-4cf2-a2b1-2f4f35d2d98d",
+      "name": "Word (Science Europe) — structured",
+      "icon": "fas fa-file-word",
+      "steps": [
+        {
+          "name": "jinja",
+          "options": {
+            "template": "src/science-europe-dmp.html.j2",
+            "content-type": "text/html",
+            "extension": "html"
+          }
+        },
+        {
+          "name": "pandoc",
+          "options": {
+            "from": "html",
+            "to": "docx",
+            "extension": "docx"
+          }
+        }
+      ]
+    },
+    {
+      "uuid": "a5ee856f-0f89-460d-83ea-9cbbe6c5db18",
+      "name": "Word (Science Europe) — narrative",
+      "icon": "fas fa-file-word",
+      "steps": [
+        {
+          "name": "jinja",
+          "options": {
+            "template": "src/science-europe-dmp-narrative.html.j2",
+            "content-type": "text/html",
+            "extension": "html"
+          }
+        },
+        {
+          "name": "pandoc",
+          "options": {
+            "from": "html",
+            "to": "docx",
+            "extension": "docx"
+          }
+        }
+      ]
+    }
+  ],
+  "_tdk": {
+    "version": "4.1.0",
+    "readmeFile": "README.md",
+    "files": [
+      "src/**/*"
+    ]
+  }
+}

@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<style>
+  body { font-family: Calibri, Arial, sans-serif; }
+  h2 { margin-top: 1.4em; }
+  h3 { margin-top: 1.1em; }
+  ul.guidance { color: #4AA55B; font-style: italic; }
+  p.answer.placeholder { color: #B00020; font-style: italic; }
+  .notice { border: 1px solid #E0A800; background: #FFF8E1; padding: 10px 14px; margin: 1em 0; }
+  .notice p { margin: 0.3em 0; }
+  #attention { margin-top: 0.6em; border-top: 1px solid #E0A800; padding-top: 0.5em; }
+  #attention ul { margin: 0.3em 0 0 1.2em; }
+  #attention a { color: #B00020; }
+  table { border-collapse: collapse; }
+  table td, table th { border: 1px solid #BFBFBF; padding: 4px 8px; }
+</style>
+</head>
+<body>
+
+<div custom-style="Title">DATA MANAGEMENT PLAN</div>
+<p><strong>Based on the Science Europe core requirements for Data Management Plans</strong></p>
+
+<div class="notice" custom-style="Notice">
+<p><strong>⚠ Automatically generated document — manual review required</strong></p>
+<p>This Data Management Plan was generated automatically as an export from the
+<a href="https://ds-wizard.org">Data Stewardship Wizard (DSW)</a>. The answers below are
+mapped from a DSW questionnaire based on the Norwegian Generic Knowledge Model and may be
+incomplete, out of context, or not fully aligned with the Science Europe requirements.</p>
+<p>Before using or submitting this document, please review every section carefully:
+complete any item marked <em>&ldquo;no answer in this project export&rdquo;</em>, remove the
+italic guidance text, and verify that each answer adequately addresses the corresponding question.</p>
+<div id="attention"><!-- populated by the anchor/jump-list generator at the end of the body --></div>
+</div><h2>General information</h2>
+
+<h3>Administrative information</h3>
+<ul class="guidance">
+<li>Provide information such as name of applicant, project number, funding programme, version of DMP.</li>
+</ul>
+<!-- KM values available for General information in this export: name, dmpTitle, contributors, didPlanApply.fundings[].funder, didPlanApply.fundings[].grantNumber, didPlanApply.fundings[].status, havePublishedPublish.publishedVersion[].optionalDescription, havePublishedPublish.publishedVersion[].dmpIdentifier, haveMadePlans --><p><strong>Project title:</strong> Machine-learning-ready climate data and model artifacts</p>
+<p><strong>DMP title:</strong> Machine Learning Climate Research Project DMP</p>
+<p><strong>Contributor:</strong> Data Stuart — Data Manager/ Data Steward, Data Curator, Data Collector, Contact Person</p>
+<p><strong>Funder:</strong> Funder: Climate-ML project specific entry</p>
+<p><strong>Grant number:</strong> RCN-MLC-2026-001</p>
+<p><strong>Funding status:</strong> Granted</p>
+<p><strong>Published DMP version:</strong> This project uses reproducible machine learning workflows for climate research, with FAIR-aligned metadata, governance, and controlled access where required.</p>
+<p><strong>DMP identifier:</strong> https://example.org/ml-climate-research</p>
+<p><strong>Revision plans:</strong> Yes, DMP revisions are planned</p><h2>1. Data description and collection or re-use of existing data</h2>
+
+<h3>1a. How will new data be collected or produced and/or how will existing data be re-used?</h3>
+<ul class="guidance">
+<li>Explain which methodologies or software will be used if new data are collected or produced.</li>
+<li>State any constraints on re-use of existing data if there are any.</li>
+<li>Explain how data provenance will be documented.</li>
+<li>Briefly state the reasons if the re-use of any existing data sources has been considered but discarded.</li>
+</ul>
+<!-- KM values available for 1a in this export: reDatasetsRecords, brieflyDescribeDiscarded, listPublishedArchived[].titlePublishedDataset|dataset, listPublishedArchived[].recordSourceHave, hasMeasuredData, howProvenance, dataMeasurementEquipment[].instruments[].whoWhere, hasNonMeasuredData, datasets[].collectionMethodology, datasets[].howCaptured, gather --><p>The project will re-use existing data or records. 
+The following existing dataset will be re-used in the project: A GREAT DATASET. 
+The conditions for re-using this dataset are as follows: Yes, all planned use is permitted. It is undefined whether the project will capture data using measurement equipment. 
+New data will be collected through observation, questionnaires or interviews. New data will be collected using the following methodology: We simply measure it with Satelites. 
+The data will be captured in the following form: All immediately in digital form. In addition, the project will gather the following materials: A lot of other data: </p>
+<ul>
+<li>Documents related to manuscript writing (e.g. manuscript drafts written in Word or LaTex, figures and illustrations in graphic software)</li>
+<li>Literature databases</li>
+<li>Notetaking documents. </li>
+</ul>
+
+<h3>1b. What data (for example the kind, formats, and volumes), will be collected or produced?</h3>
+<ul class="guidance">
+<li>Give details on the kind of data: for example numeric (databases, spreadsheets), textual (documents), image, audio, video, and/or mixed media.</li>
+<li>Give details on the data format: the way in which the data is encoded for storage, often reflected by the filename extension (for example pdf, xls, doc, txt, or rdf).</li>
+<li>Justify the use of certain formats. For example, decisions may be based on staff expertise within the host organisation, a preference for open formats, standards accepted by data repositories, widespread usage within the research community, or on the software or equipment that will be used.</li>
+<li>Give preference to open and standard formats as they facilitate sharing and long-term re-use of data (several repositories provide lists of such 'preferred formats').</li>
+<li>Give details on the volumes (they can be expressed in storage space required (bytes), and/or in numbers of objects, files, rows, and columns).</li>
+</ul>
+<!-- KM values available for 1b in this export: dataMeasurementEquipment[].dataset, dataMeasurementEquipment[].collectedFormat, datasets[].dataset_1, datasets[].collectedFormat2, gather, distributions[].fileFormatDataset, distributions[].sizeDataset, expectedTotalVolume, gigabytes --><p>The project will collect the following data: climate data. 
+This data will be recorded in the following format: Data format can be imported from FAIRsharing. In addition, the project will gather the following materials: A lot of other data: </p>
+<ul>
+<li>Documents related to manuscript writing (e.g. manuscript drafts written in Word or LaTex, figures and illustrations in graphic software)</li>
+<li>Literature databases</li>
+<li>Notetaking documents. The dataset will be stored in the following file format(s): XML JSON Wurst format. 
+The approximate size of the dataset, in gigabytes, is: 1000000000000000000. The total volume of data expected in the project is: &gt;10 TB. </li>
+</ul><h2>2. Documentation and data quality</h2>
+
+<h3>2a. What metadata and documentation (for example the methodology of data collection and way of organising data) will accompany the data?</h3>
+<ul class="guidance">
+<li>Indicate which metadata will be provided to help others identify and discover the data.</li>
+<li>Indicate which metadata standards (for example DDI, TEI, EML, MARC, CMDI) will be used.</li>
+<li>Use community metadata standards where these are in place.</li>
+<li>Indicate how the data will be organised during the project, mentioning for example conventions, version control, and folder structures. Consistent, well-ordered research data will be easier to find, understand, and re-use.</li>
+<li>Consider what other documentation is needed to enable re-use. This may include information on the methodology used to collect the data, analytical and procedural information, definitions of variables, units of measurement, and so on.</li>
+<li>Consider how this information will be captured and where it will be recorded (for example in a database with links to each item, a 'readme' text file, file headers, code books, or lab notebooks).</li>
+</ul>
+<!-- KM values available for 2a in this export: miaStandardsExist, standards[].standard, standards[].provideContextStandard, usesVocabularies, connectRespectiveMetadata, idea, appointments, appointments.naming, appointments.describeFolderStructure, fileVersioningDocs, fileVersioningDocs.describeApproachVersion, distributions[].metadataAccompaniesDataset --><p>Suitable metadata standards or schemas exist and will be used. The following metadata standard or schema will be used: CLIMATEML. 
+This standard will be applied as follows: A lot of context here.... 
+Data and metadata will be linked in the following ways: Metadata will be embedded in the data files, Structured README files will be provided, We will use a metadata tracking system. 
+It is undefined whether the metadata needed to interpret the data in the future has been identified. </p>
+<p>The project will not maintain separate versions of files or documents. 
+The metadata accompanying the dataset is as follows: Add metadata information manually. </p>
+
+<h3>2b. What data quality control measures will be used?</h3>
+<ul class="guidance">
+<li>Explain how the consistency and quality of data collection will be controlled and documented. This may include processes such as calibration, repeated samples or measurements, standardised data capture, data entry validation, peer review of data, or representation with controlled vocabularies.</li>
+</ul>
+<!-- KM values available for 2b in this export: dataMeasurementEquipment[].qualityProcessesApplied, dataMeasurementEquipment[].instruments[].isStandardAndWellDescribed, datasets[].integrityQualityMeasures, monitorIntegrity, resultsIntegrityValidation --><p>Data integrity and quality will be ensured through the following measures: Very integer and high quality numbers are given. Data integrity will be monitored after collection. 
+It is undefined whether the computational approach requires validation of results. </p><h2>3. Storage and backup during the research process</h2>
+
+<h3>3a. How will data and metadata be stored and backed up during the research?</h3>
+<ul class="guidance">
+<li>Describe where the data will be stored and backed up during research activities and how often the backup will be performed. It is recommended to store data in least at two separate locations.</li>
+<li>Give preference to the use of robust, managed storage with automatic backup, such as provided by IT support services of the home institution. Storing data on laptops, stand-alone hard drives, or external storage devices such as USB sticks is not recommended.</li>
+</ul>
+<!-- KM values available for 3a in this export: storeDocuments[].nameStorageSolution, storeDocuments[].descriptionStorageSolution, storeDocuments[].informationSecurityLevel, storeDocuments[].backupSolutionApply, storeDocuments[].backupSolutionApply.frequentlyBackupsExecuted, storageGuidelinesFollowing[].storageGuide, expectedTotalVolume, storageChangeNeeds --><p>Data will be stored using the following solution: everything. 
+This storage solution is described as follows: Everything will be stored. 
+This storage solution will be used for the following information security level(s): Strictly confidential (black), Confidential (red), Restricted (yellow), Open (green). 
+Backups will be performed using the following solution: Automated backup will be managed by the institution. 
+Backups and recovery will be handled as follows: EVery day. The project will follow the following storage guideline: <strong>University of Inland Norway</strong> (INN)</p>
+<ul>
+<li><a href="https://www.inn.no/bibliotek/forskningsstotte/forskningsdata/datahandtering-verktoy-og-lagring/">INN Data Storage Guide</a>. The total volume of data expected in the project is: &gt;10 TB. 
+It is undefined whether storage needs will change over the course of the project. </li>
+</ul>
+
+<h3>3b. How will data security and protection of sensitive data be taken care of during the research?</h3>
+<ul class="guidance">
+<li>Explain how the data will be recovered in the event of an incident.</li>
+<li>Explain who will have access to the data during the research and how access to data is controlled, especially in collaborative partnerships.</li>
+<li>Consider data protection, particularly if your data is sensitive for example containing personal data, politically sensitive information, or trade secrets. Describe the main risks and how these will be managed.</li>
+<li>Explain which institutional data protection policies are in place.</li>
+</ul>
+<!-- KM values available for 3b in this export: dataLossLeakVandalismRisks, storeDocuments[].haveAccessStorage, storeDocuments[].applicableAccessStorage, personalCollectedProcessed, sensitiveInformationThan, privacyConsiderations.safeguards, privacyConsiderations.identifiabilityLevel, institutionalPrivacyRoutines[].privacyRoutines --><p>The main risks of information loss, leakage or vandalism, and how they will be managed, are: Explore risk evaluation. 
+Access to the data will be controlled as follows: Describe access control. It is undefined whether the project will collect or process personal data. 
+It is undefined whether the project will handle sensitive information beyond the GDPR special categories. </p><h2>4. Legal and ethical requirements, codes of conduct</h2>
+
+<h3>4a. If personal data are processed, how will compliance with legislation on personal data and on security be ensured?</h3>
+<ul class="guidance">
+<li>Ensure that when dealing with personal data data protection laws (for example GDPR) are complied with:
+  <ul>
+  <li>Gain informed consent for preservation and/or sharing of personal data.</li>
+  <li>Consider anonymisation of personal data for preservation and/or sharing (truly anonymous data are no longer considered personal data).</li>
+  <li>Consider pseudonymisation of personal data (the main difference with anonymisation is that pseudonymisation is reversible).</li>
+  <li>Consider encryption which is seen as a special case of pseudonymisation (the encryption key must be stored separately from the data, for instance by a trusted third party).</li>
+  <li>Explain whether there is a managed access procedure in place for authorised users of personal data.</li>
+  </ul>
+</li>
+</ul>
+<!-- KM values available for 4a in this export: personalCollectedProcessed, documentParticipantsInformation, privacyConsiderations.legalBasis, privacyConsiderations.whatKind, privacyConsiderations.identifiabilityLevel, privacyConsiderations.safeguards, privacyConsiderations.procedure, privacyConsiderations.needDpia --><p>It is undefined whether the project will collect or process personal data. </p>
+
+<h3>4b. How will other legal issues, such as intellectual property rights and ownership, be managed? What legislation is applicable?</h3>
+<ul class="guidance">
+<li>Explain who will be the owner of the data, meaning who will have the rights to control access:
+  <ul>
+  <li>Explain what access conditions will apply to the data? Will the data be openly accessible, or will there be access restrictions? In the latter case, which? Consider the use of data access and re-use licenses.</li>
+  <li>Make sure to cover these matters of rights to control access to data for multi-partner projects and multiple data owners, in the consortium agreement.</li>
+  </ul>
+</li>
+<li>Indicate whether intellectual property rights (for example Database Directive, sui generis rights) are affected. If so, explain which and how will they be dealt with.</li>
+<li>Indicate whether there are any restrictions on the re-use of third-party data.</li>
+</ul>
+<!-- KM values available for 4b in this export: collectedDataRights, holdsRightsConditions, dataUseRestrictions, distributions[].clearOwnership, distributions[].ipReasons, distributions[].licenseDataset, listPublishedArchived[].recordSourceHave, listRelatedContracts[].titleContract --><p>Rights to the collected data will be distributed as follows: The institution will be the rightsholder. </p>
+<p>Regarding restrictions on the use of the data: No, there will be no use restrictions. It is undefined whether ownership of the data and documents is clear. 
+It is undefined whether intellectual-property reasons restrict open sharing of the data. 
+The dataset will be made available under the following licence: Data will be freely available with obligation to cite the source (e.g. CC-BY). The conditions for re-using this third-party data are as follows: Yes, all planned use is permitted. </p>
+
+<h3>4c. What ethical issues and codes of conduct are there, and how will they be taken into account?</h3>
+<ul class="guidance">
+<li>Consider whether ethical issues can affect how data are stored and transferred, who can see or use them, and how long they are kept. Demonstrate awareness of these aspects and respective planning.</li>
+<li>Follow the national and international codes of conducts and institutional ethical guidelines, and check if ethical review (for example by an ethics committee) is required for data collection in the research project.</li>
+</ul>
+<!-- KM values available for 4c in this export: requiresEthicalApproval, requiresEthicalApproval.authority[].inspectorateAuthority, indicateApplicableGeneral, additionalEthicalGuidelines, listRelevantCode[].nameCodeConduct --><p>It is undefined whether the project requires ethical pre-approval. The project will follow these general research ethical guidelines: Guidelines for Research Ethics in the Social Sciences and the Humanities by the National Committee for Research Ethics in the Social Sciences and the Humanities (NESH), National Research Ethics Committees (FEK) - General guidelines, Guidelines by The Norwegian National Research Ethics Committee for medical and health research (NEM), Ethical Principles for Medical Research Involving Human Subjects (Declaration of Helsinki), The European Code of Conduct for Research Integrity. 
+Regarding additional ethical guidelines or codes of conduct: No, only general research ethical guidelines for research. </p><h2>5. Data sharing and long-term preservation</h2>
+
+<h3>5a. How and when will data be shared? Are there possible restrictions to data sharing or embargo reasons?</h3>
+<ul class="guidance">
+<li>Explain how the data will be discoverable and shared (for example by deposit in a trustworthy data repository, indexed in a catalogue, use of a secure data service, direct handling of data requests, or use of another mechanism).</li>
+<li>Outline the plan for data preservation and give information on how long the data will be retained.</li>
+<li>Explain when the data will be made available. Indicate the expected timely release. Explain whether exclusive use of the data will be claimed and if so, why and for how long. Indicate whether data sharing will be postponed or restricted for example to publish, protect intellectual property, or seek patents.</li>
+<li>Indicate who will be able to use the data. If it is necessary to restrict access to certain communities or to apply a data sharing agreement, explain how and why. Explain what action will be taken to overcome or to minimise restrictions.</li>
+</ul>
+<!-- KM values available for 5a in this export: identifyArchiveDepositing[].repository, identifyArchiveDepositing[].typeOfArchive, allOpenOverTime, allOpenOverTime.legalReasons, allOpenOverTime.businessReasons, distributions[].dataset, distributions[].access, distributions[].retention, distributions[].licenseDataset.startingDateLicense, distributions[].access.accessReusers, distributions[].access.conditions --><p>Data will be deposited in the following archive or repository: The big ARCHIVE. 
+This archive is of the following type: A domain-specific repository. The extent to which the data can become openly available over time is: Yes, data can become open immediately. </p>
+<p>The dataset concerned is: super datset title. 
+Access to this dataset will be granted as follows: Open: The data will be shared with anyone, as long as they obey conditions of the license. 
+This data will be retained as follows: As long as technically possible. </p>
+
+<h3>5b. How will data for preservation be selected, and where data will be preserved long-term (for example a data repository or archive)?</h3>
+<ul class="guidance">
+<li>Indicate what data must be retained or destroyed for contractual, legal, or regulatory purposes.</li>
+<li>Indicate how it will be decided what data to keep. Describe the data to be preserved long-term.</li>
+<li>Explain the foreseeable research uses (and/or users) for the data.</li>
+<li>Indicate where the data will be deposited. If no established repository is proposed, demonstrate in the DMP that the data can be curated effectively beyond the lifetime of the grant. It is recommended to demonstrate that the repositories policies and procedures (including any metadata standards, and costs involved) have been checked.</li>
+</ul>
+<!-- KM values available for 5b in this export: distributions[].dataset, distributions[].retention, distributions[].retention.period, distributions[].hasBeenArchived, listHaveDelete[].specifyListDelete, listHaveDelete[].reasonsDeletion, identifyArchiveDepositing[].repository, identifyArchiveDepositing[].typeOfArchive, identifyArchiveDepositing[].typeOfArchive.longTermSupport, whoInterested --><p>The dataset concerned is: super datset title. 
+This data will be retained as follows: As long as technically possible. The dataset will be deposited in the following type of trustworthy repository: Trustworthy research data repositories. </p>
+<p>Data will be deposited in the following archive or repository: The big ARCHIVE. 
+This archive is of the following type: A domain-specific repository. The data may be of interest for re-use to: The general public, Industry, Public administration, Researchers from another domain, Researchers in the same field, Own research group/collaborators. </p>
+
+<h3>5c. What methods or software tools are needed to access and use data?</h3>
+<ul class="guidance">
+<li>Indicate whether potential users need specific tools to access and (re-)use the data. Consider the sustainability of software needed for accessing the data.</li>
+<li>Indicate whether data will be shared via a repository, requests handled directly, or whether another mechanism will be used?</li>
+</ul>
+<!-- KM values available for 5c in this export: generateResearchSoftware, softwarePackages[].nameSoftwareComputational, softwarePackages[].openSource, listSoftwareComputational[].softwareModelStandard, distributions[].access --><p>The project will generate research software, code, computational models or simulations. 
+No open-source licence will be assigned to the software. The software uses standard input and output formats. The data will be accessed using the following protocol: Open: The data will be shared with anyone, as long as they obey conditions of the license. </p>
+
+<h3>5d. How will the application of a unique and persistent identifier (such as a Digital Object Identifier (DOI)) to each data set be ensured?</h3>
+<ul class="guidance">
+<li>Explain how the data might be re-used in other contexts. Persistent identifiers (PIDs) should be applied so that data can be reliably and efficiently located and referred to. PIDs also help to track citations and re-use.</li>
+<li>Indicate whether a PID for the data will be pursued. Typically, a trustworthy, long-term repository will provide a persistent identifier.</li>
+</ul>
+<!-- KM values available for 5d in this export: distributions[].dataset, distributions[].hasBeenArchived.enterPersistentIdentifier.linkReference, listPublishedArchived[].persistentIdentifierPid --><p>The dataset concerned is: super datset title. </p><h2>6. Data management responsibilities and resources</h2>
+
+<h3>6a. Who (for example role, position, and institution) will be responsible for data management (i.e. the data steward)?</h3>
+<ul class="guidance">
+<li>Outline the roles and responsibilities for data management/stewardship activities for example data capture, metadata production, data quality, storage and backup, data archiving, and data sharing. Name responsible individual(s) where possible.</li>
+<li>For collaborative projects, explain the co-ordination of data management responsibilities across partners.</li>
+<li>Indicate who is responsible for implementing the DMP, and for ensuring it is reviewed and, if necessary, revised.</li>
+<li>Consider regular updates of the DMP.</li>
+</ul>
+<!-- KM values available for 6a in this export: haveManagementResponsibilities, contributors, listContributorsResponsible[].responsibility, responsibleDmpRevision, haveMadePlans --><p>Data-management responsibilities in the project have been clearly assigned. The project includes the following contributor and role(s): Data Stuart — Data Manager/ Data Steward, Data Curator, Data Collector, Contact Person. 
+The DMP will be revised as the project develops. </p>
+
+<h3>6b. What resources (for example financial and time) will be dedicated to data management and ensuring that data will be FAIR (Findable, Accessible, Interoperable, Re-usable)?</h3>
+<ul class="guidance">
+<li>Explain how the necessary resources (for example time) to prepare the data for sharing/preservation (data curation) have been costed in. Carefully consider and justify any resources needed to deliver the data. These may include storage costs, hardware, staff time, costs of preparing data for deposit, and repository charges.</li>
+<li>Indicate whether additional resources will be needed to prepare data for deposit or to meet any charges from data repositories. If yes, explain how much is needed and how such costs will be covered.</li>
+</ul>
+<!-- KM values available for 6b in this export: hasDataPublicationBudget, hasDataPublicationBudget.budget, storageActivePhase, storageActivePhase.indicateCosts2, preservationArchivingAssociated, preservationArchivingAssociated.indicateCosts, recurringFees, totalCostsManagement --><p>No specific budget has been set aside to prepare data for sharing and archiving. Data storage during the active phase of the project will not incur additional costs. Long-term preservation and archiving will not incur additional costs. The project relies on software or services with recurring licence fees. </p>
+
+<script>
+(function () {
+  // --- HTML anchor generator: give every section heading a unique id ---
+  function slugify(s) {
+    return s.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '').slice(0, 50);
+  }
+  var used = {};
+  document.querySelectorAll('h2, h3').forEach(function (h) {
+    var base = h.id || ('sec-' + (slugify(h.textContent) || 'section'));
+    var id = base, n = 2;
+    while (used[id]) { id = base + '-' + n; n++; }
+    used[id] = true;
+    h.id = id;
+  });
+  // --- Collect problematic sections: headings preceding an unanswered marker ---
+  var seen = {}, items = [];
+  document.querySelectorAll('.answer.placeholder').forEach(function (p) {
+    var h = p.previousElementSibling;
+    while (h && h.tagName !== 'H2' && h.tagName !== 'H3') h = h.previousElementSibling;
+    if (h && !seen[h.id]) { seen[h.id] = true; items.push(h); }
+  });
+  // --- Build the jump list in the header ---
+  var box = document.getElementById('attention');
+  if (!box) return;
+  if (!items.length) {
+    box.innerHTML = '<p><strong>Sections needing attention:</strong> none detected \u2014 every section has at least one answer. Manual review is still recommended.</p>';
+    return;
+  }
+  var html = '<p><strong>Sections needing attention (' + items.length + '):</strong> jump directly to review them.</p><ul>';
+  items.forEach(function (h) {
+    html += '<li><a href="#' + h.id + '">' + h.textContent + '</a></li>';
+  });
+  html += '</ul>';
+  box.innerHTML = html;
+})();
+</script>
+
+</body>
+</html>
